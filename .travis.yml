@@ -2,9 +2,9 @@ sudo: required
 
 addons:
   artifacts:
-   # ...
-   paths:
-     - $(git ls-files -o | grep travis_artifacts | tr "\n" ":")
+    # ...
+    paths:
+      - $(git ls-files -o | grep travis_artifacts | tr "\n" ":")
 
 language: php
 
@@ -13,7 +13,7 @@ php:
   - 7.2
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.8.1
+  DOCKER_COMPOSE_VERSION: 1.9.0
   COMPOSER_MEMORY_LIMIT: -1
 
 services:
@@ -29,7 +29,7 @@ before_install:
   # Disable xdebug.
   - phpenv config-rm xdebug.ini
   # Lets set-up our helper repository with all the docker config and use correct version in composer.json.
-  - git clone --branch 8.x https://github.com/drupalwxt/site-wxt.git
+  - git clone --branch 8.x https://github.com/thomascraig/site-wxt.git
   - cd site-wxt
   # Install Drupal WxT.
   - export PR=https://api.github.com/repos/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
@@ -40,7 +40,7 @@ before_install:
   - rm composer.lock
   - composer global require "hirak/prestissimo:^0.3"
   - composer global require "zaporylie/composer-drupal-optimizations:^1.0"
-  - if [ -n "$TRAVIS_TAG" ]; then composer require drupalwxt/wxt:${TRAVIS_TAG}; else composer require drupalwxt/wxt:dev-${BRANCH}#${TRAVIS_COMMIT}; fi
+  - if [ -n "$TRAVIS_TAG" ]; then composer require thomascraig/wxt:${TRAVIS_TAG}; else composer require thomascraig/wxt:dev-${BRANCH}#${TRAVIS_COMMIT}; fi
   # Update the docker-compose binary for compose v2 support.
   - sudo rm /usr/local/bin/docker-compose || true
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -55,7 +55,3 @@ before_install:
 script:
   - make drupal_install
   - sudo make test
-
-notifications:
-  slack:
-    secure: mp+KUCzyworoeWCzNuZRm+WNdEiFKdZykkOsRIOF8LfIrsPtY/8q6h5LU13ks6wEM6dq8cENC5/4De3SyBl0J/1ItfcWpy0ZzwXhlN04gImlLi07JHhta7kMJYtMDUbSafNe+xFqAarO0NyGaCevD1r+M83hTlfVd85x0Mw3kJw1WwgwF0qL81A4DEyHDd/JE4y4cmxPI33Q8CIq3c2XrcP3F3Aj5XH7d7+L8TZoPFL+bsjc4f4Y+7AdGIZoxXa29r8EFml8x9xZUONBihWR2g9EzXsq4KRS8vmCj+eWie25gcQ5WFMYZDlZV3vd6XfC/OlJK63EjLDVENZS3IHtykcDC5p1qU6WHJ2HmgQkmzFeVaErDNQffP6OY+74irRcJbWMf/ByEqcwYbi8JbGF553qJwXFOzKvELj7B3lYtcUqvUfuwrZ1d2BOWZc4bRKcGhX32oibTiFvPU1l3fUj2ykPNhhpzF5/MpVJLQgb/IK/2dlvmycfURH7Ao4XLPJmykLps1PAHnRiH9qetMVCcbnt0MUkgZr5cC5/Ak91eTMIpaXCNz/s/M4XzUeTuKnk9n4CYVOZhu8Sb9gPyRdyvoAw+gtOk3M3lvNu189ia/MXesM3MuS9Tk91T6coiWaMeCaFdYwn4HoBm7eEYv0M3/oeDwF94BTCFNXbnY7asGU=

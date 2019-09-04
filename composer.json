@@ -22,7 +22,7 @@
         "drupal/devel": "^1.0",
         "squizlabs/php_codesniffer": "2.*",
         "se/selenium-server-standalone": "^2.53",
-        "drupal/console": "~1.8.0",
+        "drupal/console": "1.9.0",
         "jakoch/phantomjs-installer": "1.9.8",
         "composer/composer": "^1.4",
         "grasmash/yaml-cli": "^1.0"
@@ -34,8 +34,7 @@
             "minConnections": 5
         }
     },
-    "repositories": [
-        {
+    "repositories": [{
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
@@ -44,7 +43,7 @@
             "url": "https://asset-packagist.org"
         },
         {
-            "type" : "composer",
+            "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
         }
     ],
@@ -62,14 +61,14 @@
     },
     "extra": {
         "installer-types": [
-          "bower-asset",
-          "npm-asset"
+            "bower-asset",
+            "npm-asset"
         ],
         "installer-paths": {
             "html/core": [
                 "type:drupal-core"
             ],
-            "html/libraries/{$name}" : [
+            "html/libraries/{$name}": [
                 "type:drupal-library",
                 "type:bower-asset",
                 "type:npm-asset"
@@ -96,128 +95,81 @@
         "enable-patching": true,
         "patches": {
             "drupal/bootstrap": {
-                "Enter drupal/bootstrap patch #2881978 description here":
-                "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch"
+                "Enter drupal/bootstrap patch #2881978 description here": "https://www.drupal.org/files/issues/2018-10-28/temporarily_disable-2881978-3.patch"
             },
             "drupal/blog": {
-                "Enter drupal/blog patch #2834732 description here":
-                "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
+                "Enter drupal/blog patch #2834732 description here": "https://www.drupal.org/files/issues/blog-no_results_text-2834732-2.patch"
             },
             "drupal/core": {
-                "Enter drupal/core patch #1838234 description here":
-                "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
-                "Enter drupal/core patch #2559833 description here":
-                "https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch",
-                "Enter drupal/core patch #2606322 description here":
-                "https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch",
-                "Enter drupal/core patch #2630732 description here":
-		"https://www.drupal.org/files/issues/2019-05-11/2630732-55.drupal.Implement-Entityfields-for-migration-destinations.patch",
-                "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
-                "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
-                "Enter drupal/core patch #2698057 description here":
-                "https://www.drupal.org/files/issues/2698057_2.patch",
-                "2699157 - Plugin Lazy loading can cause usort warning":
-                "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
-                "Enter drupal/core patch #2715483 description here":
-                "https://www.drupal.org/files/issues/regression_-2715483-18.patch",
-                "Enter drupal/core patch #2752443 description here":
-                "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch",
-                "2759397 - Patch EntityReferenceItemNormalizer to prevent recursion":
-                "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
-                "Enter drupal/core patch #2765297 description here":
-                "https://www.drupal.org/files/issues/taxonomy-translation-2765297-16.patch",
-                "Enter drupal/core patch #2816921 description here":
-                "https://www.drupal.org/files/issues/user_password-2816921-2.patch",
-                "Enter drupal/core patch #2820347 description here":
-                "https://www.drupal.org/files/issues/exposed_filter_reset-2820347-67.patch",
-                "Enter drupal/core patch #2885370 description here":
-                "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
-                "Enter drupal/core patch #2862511 description here":
-                "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch",
-                "Enter drupal/core patch #2893029 description here":
-                "https://www.drupal.org/files/issues/2893029-9.patch",
-                "Enter drupal/core patch #2898119 description here":
-                "https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch",
-                "Enter drupal/core patch #2920637 description here":
-                "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
-                "Enter drupal/core patch #2893407 description here":
-                "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch"
+                "Enter drupal/core patch #1838234 description here": "https://www.drupal.org/files/issues/2018-09-06/1838234-52.patch",
+                "Enter drupal/core patch #2559833 description here": "https://www.drupal.org/files/issues/2018-11-01/comment-redirect-2559833-57.patch",
+                "Enter drupal/core patch #2606322 description here": "https://www.drupal.org/files/issues/2606322-4.x-field_list_item_view_correct_language.patch",
+                "Enter drupal/core patch #2630732 description here": "https://www.drupal.org/files/issues/2019-05-11/2630732-55.drupal.Implement-Entityfields-for-migration-destinations.patch",
+                "2679775 - Fixes float issue with inline label fields (entity references on most cases).": "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
+                "Enter drupal/core patch #2698057 description here": "https://www.drupal.org/files/issues/2698057_2.patch",
+                "2699157 - Plugin Lazy loading can cause usort warning": "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
+                "Enter drupal/core patch #2715483 description here": "https://www.drupal.org/files/issues/regression_-2715483-18.patch",
+                "Enter drupal/core patch #2752443 description here": "https://www.drupal.org/files/issues/in_correct_order_and-2752443-1.patch",
+                "2759397 - Patch EntityReferenceItemNormalizer to prevent recursion": "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
+                "Enter drupal/core patch #2765297 description here": "https://www.drupal.org/files/issues/taxonomy-translation-2765297-16.patch",
+                "Enter drupal/core patch #2816921 description here": "https://www.drupal.org/files/issues/user_password-2816921-2.patch",
+                "Enter drupal/core patch #2820347 description here": "https://www.drupal.org/files/issues/exposed_filter_reset-2820347-67.patch",
+                "Enter drupal/core patch #2885370 description here": "https://www.drupal.org/files/issues/systemmainblock_build-2885370-3.patch",
+                "Enter drupal/core patch #2862511 description here": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch",
+                "Enter drupal/core patch #2893029 description here": "https://www.drupal.org/files/issues/2893029-9.patch",
+                "Enter drupal/core patch #2898119 description here": "https://www.drupal.org/files/issues/doctrine_common_version_below_2.8-2898119-11.patch",
+                "Enter drupal/core patch #2920637 description here": "https://www.drupal.org/files/issues/taxonomy-context-provider-2920637-3.patch",
+                "Enter drupal/core patch #2893407 description here": "https://www.drupal.org/files/issues/2018-06-05/2893407-34.patch"
             },
             "drupal/ctools": {
-                "Enter drupal/ctools patch #2667652 description here":
-                "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
-                "Enter drupal/ctools patch #2712661 description here":
-                "https://www.drupal.org/files/issues/allow-2712661-2.patch",
-                "Enter drupal/ctools patch #2857279 description here":
-                "https://www.drupal.org/files/issues/ctools-duplicated_node_type_condition.patch",
-                "Enter drupal/ctools patch #2874176 description here":
-                "https://www.drupal.org/files/issues/entityview-cache-metadata-2874176-2.patch",
-                "Enter drupal/ctools patch #2924356 description here":
-                "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
+                "Enter drupal/ctools patch #2667652 description here": "https://www.drupal.org/files/issues/ctools-option_to_expose-2667652-3.patch",
+                "Enter drupal/ctools patch #2712661 description here": "https://www.drupal.org/files/issues/allow-2712661-2.patch",
+                "Enter drupal/ctools patch #2857279 description here": "https://www.drupal.org/files/issues/ctools-duplicated_node_type_condition.patch",
+                "Enter drupal/ctools patch #2874176 description here": "https://www.drupal.org/files/issues/entityview-cache-metadata-2874176-2.patch",
+                "Enter drupal/ctools patch #2924356 description here": "https://www.drupal.org/files/issues/ctools-entity_field_rendered_twice-2924356-2.patch"
             },
             "drupal/inline_entity_form": {
-                "Enter drupal/inline_entity_form patch #2367235 description here":
-                "https://www.drupal.org/files/issues/support_entity_revision-2367235-92.patch"
+                "Enter drupal/inline_entity_form patch #2367235 description here": "https://www.drupal.org/files/issues/support_entity_revision-2367235-92.patch"
             },
             "drupal/group": {
-                "Enter drupal/group patch #2817109 description here":
-                 "https://www.drupal.org/files/issues/2817109-by-rachel_norfolk-ericras-How-to-redir.patch",
-                "Enter drupal/group patch #2864721 description here":
-                "https://www.drupal.org/files/issues/group-translate_content_permission-2864721-5.patch",
-                "Enter drupal/group patch #2895988 description here":
-                "https://www.drupal.org/files/issues/2895988-4.patch"
+                "Enter drupal/group patch #2817109 description here": "https://www.drupal.org/files/issues/2817109-by-rachel_norfolk-ericras-How-to-redir.patch",
+                "Enter drupal/group patch #2864721 description here": "https://www.drupal.org/files/issues/group-translate_content_permission-2864721-5.patch",
+                "Enter drupal/group patch #2895988 description here": "https://www.drupal.org/files/issues/2895988-4.patch"
             },
             "drupal/media_entity_image": {
-                "Enter drupal/media_entity_image patch #2850169 description here":
-                "https://www.drupal.org/files/issues/add_image_formatter-2850169-5.patch"
+                "Enter drupal/media_entity_image patch #2850169 description here": "https://www.drupal.org/files/issues/add_image_formatter-2850169-5.patch"
             },
             "drupal/menu_block": {
-                "Enter drupal/menu_block patch #2756675 description here":
-                "https://www.drupal.org/files/issues/menu_block-follow-2756675-32.patch",
-                "Enter drupal/menu_block patch #2919579 description here":
-                "https://www.drupal.org/files/issues/patch_menu_block_with-2919579-3.patch"
+                "Enter drupal/menu_block patch #2756675 description here": "https://www.drupal.org/files/issues/menu_block-follow-2756675-32.patch",
+                "Enter drupal/menu_block patch #2919579 description here": "https://www.drupal.org/files/issues/patch_menu_block_with-2919579-3.patch"
             },
             "drupal/migrate_tools": {
-                "Enter drupal/migrate_tools patch #3024399 description here":
-                "https://www.drupal.org/files/issues/2019-02-05/migrate-tools_fix-drush-options_3024399-23.patch"
+                "Enter drupal/migrate_tools patch #3024399 description here": "https://www.drupal.org/files/issues/2019-02-05/migrate-tools_fix-drush-options_3024399-23.patch"
             },
             "drupal/page_manager": {
-                "Enter drupal/page_manager patch #2626090 description here":
-                "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
-                "Enter drupal/page_manager patch #2710169 description here":
-                "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
-                "Enter drupal/page_manager patch #2752227 description here":
-                "https://www.drupal.org/files/issues/2018-07-05/page_manager-incorrect-page_title-2752227-32-8.x.4.x.patch"
+                "Enter drupal/page_manager patch #2626090 description here": "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
+                "Enter drupal/page_manager patch #2710169 description here": "https://www.drupal.org/files/issues/page_manager-block-css-attributes-9.patch",
+                "Enter drupal/page_manager patch #2752227 description here": "https://www.drupal.org/files/issues/2018-07-05/page_manager-incorrect-page_title-2752227-32-8.x.4.x.patch"
             },
             "drupal/paragraphs": {
-                "Enter drupal/paragraphs patch #2878615 description here":
-                "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch",
-                "Update function 8018 caught in endless loop":
-                "https://www.drupal.org/files/issues/2019-03-21/paragraphs-update-endless-loop-3041868-23.patch"
+                "Enter drupal/paragraphs patch #2878615 description here": "https://www.drupal.org/files/issues/comments_entity_uri-2878615-6.patch",
+                "Update function 8018 caught in endless loop": "https://www.drupal.org/files/issues/2019-03-21/paragraphs-update-endless-loop-3041868-23.patch"
             },
             "drupal/panels": {
-                "Enter drupal/panels patch #2667755 description here":
-                "https://www.drupal.org/files/issues/bandaid.patch",
-                "Enter drupal/panels patch #2869412 description here":
-                "https://www.drupal.org/files/issues/2018-03-19/panels--page_title_does_not_display--2869412-27.patch",
-                "Enter drupal/panels patch #2900531 description here":
-                "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch",
-                "Enter drupal/panels patch #2910704 description here":
-                "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
+                "Enter drupal/panels patch #2667755 description here": "https://www.drupal.org/files/issues/bandaid.patch",
+                "Enter drupal/panels patch #2869412 description here": "https://www.drupal.org/files/issues/2018-03-19/panels--page_title_does_not_display--2869412-27.patch",
+                "Enter drupal/panels patch #2900531 description here": "https://www.drupal.org/files/issues/classes_should_be_array-2900531-2.patch",
+                "Enter drupal/panels patch #2910704 description here": "https://www.drupal.org/files/issues/panels-ipe-card-flip-ie-error-2910704.diff"
             },
-	    "drupal/panelizer": {
-                "Allow the previewing of nodes with panelizer":
-                "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
-	    },
+            "drupal/panelizer": {
+                "Allow the previewing of nodes with panelizer": "https://www.drupal.org/files/issues/2019-05-17/panelizer-node-previews-2750491-7.patch"
+            },
             "drupal/s3fs": {
-                "Enter drupal/s3fs patch #2986407 description here":
-                "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
-                "Enter drupal/s3fs patch #3038992 description here":
-                "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
+                "Enter drupal/s3fs patch #2986407 description here": "https://www.drupal.org/files/issues/2018-07-17/s3fs-2986407-save-memory-2.patch",
+                "Enter drupal/s3fs patch #3038992 description here": "https://www.drupal.org/files/issues/2019-03-10/0001-feat-s3fs-Compatibility-with-Minio.patch"
             },
             "drupal/views_bootstrap": {
-                "Enter drupal/views_bootstrap patch #2878352 description here":
-                "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
+                "Enter drupal/views_bootstrap patch #2878352 description here": "https://www.drupal.org/files/issues/add_bootstrap_panels-2878352-3.patch"
             }
         }
     },
@@ -235,7 +187,7 @@
         "drupal/ckeditor_codemirror": "2.2",
         "drupal/config_rewrite": "1.1",
         "drupal/config_update": "1.6",
-        "drupal/core": "8.7.1",
+        "drupal/core": "8.7.6",
         "drupal/ctools": "3.0.0",
         "drupal/diff": "1.0-rc2",
         "drupal/entity_reference_revisions": "1.6",
