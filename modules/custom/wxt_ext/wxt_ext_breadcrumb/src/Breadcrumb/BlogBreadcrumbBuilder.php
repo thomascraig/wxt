@@ -20,7 +20,8 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 
-class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
+class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder
+{
 
   use StringTranslationTrait;
 
@@ -129,7 +130,8 @@ class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
     CurrentPathStack $current_path,
     LanguageManagerInterface $language_manager,
     PathValidator $pathValidator,
-    AliasManagerInterface $alias_manager) {
+    AliasManagerInterface $alias_manager
+  ) {
     $this->context = $context;
     $this->accessManager = $access_manager;
     $this->router = $router;
@@ -146,19 +148,21 @@ class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
   /**
    * {@inheritdoc}
    */
-  public function applies(RouteMatchInterface $route_match) {
+  public function applies(RouteMatchInterface $route_match)
+  {
     $parameters = $route_match->getParameters()->all();
     $path = trim($this->context->getPathInfo(), '/');
     $path_elements = explode('/', $path);
     $pathEnd = end($path_elements);
 
     // Content type determination.
-    if (!empty($parameters['node']) &&
-        is_object($parameters['node']) &&
-        $parameters['node']->getType() == 'blog_post') {
+    if (
+      !empty($parameters['node']) &&
+      is_object($parameters['node']) &&
+      $parameters['node']->getType() == 'blog_post'
+    ) {
       return TRUE;
-    }
-    elseif (!empty($pathEnd) && $pathEnd == 'blog') {
+    } elseif (!empty($pathEnd) && $pathEnd == 'blog') {
       return TRUE;
     }
   }
@@ -166,7 +170,8 @@ class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
   /**
    * {@inheritdoc}
    */
-  public function build(RouteMatchInterface $route_match) {
+  public function build(RouteMatchInterface $route_match)
+  {
     $breadcrumb = new Breadcrumb();
     $links = [];
 
@@ -211,5 +216,4 @@ class BlogBreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
 
     return $breadcrumb;
   }
-
 }
