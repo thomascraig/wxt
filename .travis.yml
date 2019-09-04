@@ -40,7 +40,7 @@ before_install:
   - rm composer.lock
   - composer global require "hirak/prestissimo:^0.3"
   - composer global require "zaporylie/composer-drupal-optimizations:^1.0"
-  - if [ -n "$TRAVIS_TAG" ]; then composer require thomascraig/wxt:${TRAVIS_TAG}; else composer require thomascraig/wxt:dev-${BRANCH}#${TRAVIS_COMMIT}; fi
+  - composer require thomascraig/wxt_custom
   # Update the docker-compose binary for compose v2 support.
   - sudo rm /usr/local/bin/docker-compose || true
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
