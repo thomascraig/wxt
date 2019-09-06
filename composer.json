@@ -1,5 +1,5 @@
 {
-    "name": "thomascraig/wxt_custom",
+    "name": "thomascraig/wxt",
     "description": "Project template for Drupal 8 sites built with the WxT distribution.",
     "type": "drupal-profile",
     "license": "GPL-2.0+",
